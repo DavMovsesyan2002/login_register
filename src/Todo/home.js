@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
-import Router_Link from './Router_Link.js'
-import Results from './Results.js'
-import API from '../Todo/api.js';
+import API from './API/api.js';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    NavLink
+  } from "react-router-dom";
+
+import Cars from './Cars.js'
+import Electronics from './Electronics.js'
+import Real_Estate from './Real_Estate.js'
 
 export default class Home extends Component {
     state = {
         persons: []
       }
-    
+
     componentDidMount() {
         const config = {
             headers: {
@@ -26,22 +34,24 @@ export default class Home extends Component {
     }
 
     render(){
-        /*if(this.state.persons){
-            return (
-                <ul>
-                    { this.state.persons.map(person => <li>{person.name}</li>)}
-                </ul>
-        
-            )
-        }*/
         return(
-            <>
-                <div className='search_div'> 
-                    <Router_Link /> 
-                </div> 
-                <div className="results">
-                    <Results />
-                </div>
+            <>            
+               <Router>
+                    <div className='search_div'> 
+                        <div className='margin_div_search'>
+                            <div className='search_text'>
+                                <span className='search_spam'><NavLink activeStyle={{ color: "#E5801A",textDecoration: 'underline'}} to="/cars" className='spam_link'>Cars</NavLink></span>
+                                <span className='search_spam'><NavLink activeStyle={{ color: "#E5801A",textDecoration: 'underline'}} to="/" className='spam_link'>Real Estate</NavLink></span>
+                                <span className='search_spam'><NavLink activeStyle={{ color: "#E5801A",textDecoration: 'underline'}} to="/electronics" className='spam_link'>Electronics</NavLink></span>
+                            </div>
+                        </div>
+                    </div>
+                    <Switch>
+                        <Route exact path="/cars" component={Cars} />
+                        <Route exact path="/" component={Real_Estate} />
+                        <Route path="/electronics" component={Electronics} />
+                    </Switch>
+                </Router> 
             </>
         )
     }

@@ -1,0 +1,23 @@
+.more_div{
+    width: 100%;
+    height:750px;
+    display: flex;
+}
+.more_about_divs{
+    width: 50%;
+    height: 100%;
+    padding: 65px 120px 40px 120px;
+}
+.more_name_text{
+    margin-bottom: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+}
+.more_name_text_span_1{
+    width: 50%;
+}
+.more_div_about{
+
+}

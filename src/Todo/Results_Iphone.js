@@ -7,7 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Cards from './Cards';
+import Cards_Iphone from './Cards_Iphone';
 
 const useStyles = makeStyles((theme) => ({
     pagination: {
@@ -84,8 +84,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-
-export default function Router_Link(){
+export default function Results_Real_Estate(){
     const classes = useStyles();
     const [age, setAge] = React.useState('');
 
@@ -126,28 +125,28 @@ export default function Router_Link(){
                 </div>
            </div>
             <div className={classes.divs}>
-                <Cards />
-                <Cards />
-                <Cards />
-                <Cards />
+                <Cards_Iphone />
+                <Cards_Iphone />
+                <Cards_Iphone />
+                <Cards_Iphone />
             </div>
             <div className={classes.divs}>
-                <Cards />
-                <Cards />
-                <Cards />
-                <Cards />
+                <Cards_Iphone />
+                <Cards_Iphone />
+                <Cards_Iphone />
+                <Cards_Iphone />
             </div>
             <div className={classes.divs}>
-                <Cards />
-                <Cards />
-                <Cards />
-                <Cards />
+                <Cards_Iphone />
+                <Cards_Iphone />
+                <Cards_Iphone />
+                <Cards_Iphone />
             </div>
             <div className={classes.divs}>
-                <Cards />
-                <Cards />
-                <Cards />
-                <Cards />
+                <Cards_Iphone />
+                <Cards_Iphone />
+                <Cards_Iphone />
+                <Cards_Iphone />
             </div>
             <div className={classes.pagination}>
                 <Pagination className={classes.root} count={10} variant="outlined" shape="rounded" />

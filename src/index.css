@@ -21,8 +21,12 @@ code {
 /*search*/
 .search_div{
   display: block;
+  padding: 31px 0 0px 0;
+}
+.search_inputs{
+  display: block;
   height: 220px;
-  padding: 31px 197px 77px 202px;
+  padding: 31px 197px 77px 202px; 
 }
 .margin_div_search{
   display: block;
@@ -40,7 +44,10 @@ code {
   display: flex;
   justify-content: space-between;
 }
-
+.real_electronic_div{
+  display: flex;
+  justify-content: space-evenly;
+}
 .inputs_div{
   width: 350px;
   height: auto;
@@ -56,6 +63,7 @@ code {
     justify-content: space-between;
     flex-direction: column;
 }
+
 .results{
   display: block;
   height: 2660px;

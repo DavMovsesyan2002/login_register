@@ -1,20 +1,17 @@
-import React,{useState} from 'react';
-import More from '../Todo/More.js';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-  Link
-} from "react-router-dom";
+import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
-import images from '../img/nkar1.png'; // Tell webpack this JS file uses this image
+import images from '../img/iphone.jpg'; // Tell webpack this JS file uses this image
 import Location from '../img/location.svg'; 
-import Bed from '../img/bed.svg';
-import Bathroom from '../img/bath.svg';
 import Compare from '../img/compare.svg';
 import Like from '../img/like.svg';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
+
+
+import Grid from '@material-ui/core/Grid';
+import Tooltip from '@material-ui/core/Tooltip';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -23,7 +20,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Home from './Home.js'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -55,6 +51,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  price_end: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop:'15px',
+  },
   price_text:{
     fontSize:'22px',
     fontWeight:'bold',
@@ -67,17 +69,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
-export default function Cards(){
+export default function Cards_Cars(){
     const classes = useStyles();
-    const [isAuth, setIsAuth] = useState(true);
-    if(!isAuth){
-        return <Home />
-    }
+
     return(
-      <Router>
-          <Card className={classes.res_div}>
+                <Card className={classes.res_div}>
                     <CardActionArea>
                         <CardMedia
                         className={classes.media}
@@ -86,34 +82,28 @@ export default function Cards(){
                         />
                         <CardContent>
                         <Typography gutterBottom className={classes.fontSize_22}>
-                            Dunmaniheen, Killka street, 14
+                            Samsung Galaxy S10, 128 GB
                             <div className={classes.price}>
                                 <span className={classes.price_text}>15000 $</span>
-                                <span className={classes.fontSize_17}>Rent</span>
+                                <span className={classes.fontSize_17}></span>
                             </div>
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
                             <div className={classes.price}>
-                                <span className={classes.fontSize_20}>Let.ie</span>
+                                <span className={classes.fontSize_20}>Expert</span>
                                 <span className={classes.fontSize_17}>01.12.19</span>
                             </div>
                             <div className={classes.price}>
                                 <span className={classes.fontSize_17}><img src={Location} width='20px' height='20px'></img> Waterloo, Fairhill</span>
-                                <span className={classes.fontSize_17}>House</span>
+                                <span className={classes.fontSize_17}>Phone</span>
                             </div>
                             <div className={classes.price}>
-                                <span className={classes.fontSize_17}><img src={Bed} width='20px' height='20px'></img> 4 Beds</span>
-                                <span className={classes.fontSize_17}><img src={Bathroom} width='20px' height='20px'></img> 2 Bathroom</span>
+                               
                             </div>
-                            <div className={classes.price}>
+                            <div className={classes.price_end}>
                                 <span className={classes.fontSize_17}><img src={Compare} width='20px' height='20px'></img> Compare</span>
                                 <span className={classes.fontSize_17}><img src={Like} width='20px' height='20px'></img></span>
-                                <span className={classes.span_three}>
-                                    <Link to='/more'>
-                                      More
-                                      <ArrowRightAltIcon className={classes.fontSize_30}></ArrowRightAltIcon>
-                                    </Link>
-                                </span>
+                                <span className={classes.span_three}>More <ArrowRightAltIcon className={classes.fontSize_30}></ArrowRightAltIcon></span>
                             </div>
                         </Typography>
                         </CardContent>
@@ -122,15 +112,10 @@ export default function Cards(){
                         <Button size="small" color="primary">
                         Share
                         </Button>
-                        <Button  size="small" color="primary">
-                          Learn More
+                        <Button size="small" color="primary">
+                        Learn More
                         </Button>
-                      
                     </CardActions>
                 </Card>
-                <Switch>
-                    <Route exact path="/more"/>
-                </Switch>
-      </Router>
     )
 }

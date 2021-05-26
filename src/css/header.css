@@ -1,0 +1,38 @@
+.header_nav{
+    display:block;
+    height:80px;
+    background:#F7F7F7;
+}
+.logo{
+    width: 20%;
+    float: left;
+    text-align: right;
+    padding: 21px 142px 17px 25px;
+}
+.logo_img{
+    width: 133px;
+    height: 42px;
+}
+.header_a{
+    width:80px;
+    color:#000000;
+    float:left;
+    text-decoration: none;
+    font-weight:bold;
+    text-align:center;
+    padding:21px;
+}
+.sign_in{
+    width: 150px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 25px 0 0 136px;
+    float: left;
+}
+.fontSize{
+    font-size:1.5rem;
+}
+.sign_in_spam{
+    padding:0px 15px 0 0;
+}

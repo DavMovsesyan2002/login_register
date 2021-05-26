@@ -7,6 +7,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Results_Cars from './Results_Cars.js'
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -60,172 +61,179 @@ export default function Cars(){
         setAge(event.target.value);
     };
     return(
-        <div className='real_estate_div'>
-            <div className='inputs_div_cars'>
-                <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
-                    <InputLabel id="demo-simple-select-outlined-label">Type of Car</InputLabel>
-                    <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    value={age}
-                    onChange={handleChange}
-                    label="Age"
-                    >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>
-                <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
-                    <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
-                    <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    value={age}
-                    onChange={handleChange}
-                    label="Age"
-                    >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>
-                <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
-                    <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
-                    <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    value={age}
-                    onChange={handleChange}
-                    label="Age"
-                    >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>
-            </div>
-            <div className='inputs_div'>
-                <div className={classes.in_div_two_inputs}>
-                <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
-                    <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
-                    <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    value={age}
-                    onChange={handleChange}
-                    label="Age"
-                    >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>
-                </div>
-                <div className={classes.in_div_two_inputs}>
-                    <form className={classes.root} noValidate autoComplete="off">
-                        <TextField placeholder id="outlined-basic" label="Outlined" variant="outlined" className={classes.float_left}/>
-                        <TextField id="outlined-basic" label="Outlined" variant="outlined" className={classes.float_right} />
-                    </form>
-                </div>
-                <div className={classes.in_div_two_inputs}>
-                    <form className={classes.root} noValidate autoComplete="off">
-                        <TextField placeholder id="outlined-basic" label="Baths from" variant="outlined" className={classes.float_left}/>
-                        <TextField id="outlined-basic" label="to" variant="outlined" className={classes.float_right} />
-                    </form>
-                </div>
-            </div>
-            <div className='inputs_div'>
-                <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
-                    <InputLabel id="demo-simple-select-outlined-label">Property Type</InputLabel>
-                    <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    value={age}
-                    onChange={handleChange}
-                    label="Age"
-                    >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>
-                <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
-                    <InputLabel id="demo-simple-select-outlined-label">Additional Feature</InputLabel>
-                    <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    value={age}
-                    onChange={handleChange}
-                    label="Age"
-                    >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>
-                <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
-                    <InputLabel id="demo-simple-select-outlined-label">Donor Site</InputLabel>
-                    <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    value={age}
-                    onChange={handleChange}
-                    label="Age"
-                    >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>
-            </div>
-            <div className='inputs_div_flex'>
-                <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-                <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+        <>
+            <div className='search_inputs'>
+                <div className='real_estate_div'>
+                    <div className='inputs_div_cars'>
+                        <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
+                            <InputLabel id="demo-simple-select-outlined-label">Type of Car</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            value={age}
+                            onChange={handleChange}
+                            label="Age"
+                            >
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
+                            <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            value={age}
+                            onChange={handleChange}
+                            label="Age"
+                            >
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
+                            <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            value={age}
+                            onChange={handleChange}
+                            label="Age"
+                            >
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </div>
+                    <div className='inputs_div'>
+                        <div className={classes.in_div_two_inputs}>
+                        <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
+                            <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            value={age}
+                            onChange={handleChange}
+                            label="Age"
+                            >
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl>
+                        </div>
+                        <div className={classes.in_div_two_inputs}>
+                            <form className={classes.root} noValidate autoComplete="off">
+                                <TextField placeholder id="outlined-basic" label="Outlined" variant="outlined" className={classes.float_left}/>
+                                <TextField id="outlined-basic" label="Outlined" variant="outlined" className={classes.float_right} />
+                            </form>
+                        </div>
+                        <div className={classes.in_div_two_inputs}>
+                            <form className={classes.root} noValidate autoComplete="off">
+                                <TextField placeholder id="outlined-basic" label="Baths from" variant="outlined" className={classes.float_left}/>
+                                <TextField id="outlined-basic" label="to" variant="outlined" className={classes.float_right} />
+                            </form>
+                        </div>
+                    </div>
+                    <div className='inputs_div'>
+                        <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
+                            <InputLabel id="demo-simple-select-outlined-label">Property Type</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            value={age}
+                            onChange={handleChange}
+                            label="Age"
+                            >
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
+                            <InputLabel id="demo-simple-select-outlined-label">Additional Feature</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            value={age}
+                            onChange={handleChange}
+                            label="Age"
+                            >
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
+                            <InputLabel id="demo-simple-select-outlined-label">Donor Site</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            value={age}
+                            onChange={handleChange}
+                            label="Age"
+                            >
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </div>
+                    <div className='inputs_div_flex'>
+                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
 
-                <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
-                    <InputLabel id="demo-simple-select-outlined-label">Property Category</InputLabel>
-                    <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    value={age}
-                    onChange={handleChange}
-                    label="Age"
-                    >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                    </Select>
-                </FormControl>
+                        <FormControl variant="outlined" className={classes.formControl,classes.search_input_changed}>
+                            <InputLabel id="demo-simple-select-outlined-label">Property Category</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-outlined-label"
+                            id="demo-simple-select-outlined"
+                            value={age}
+                            onChange={handleChange}
+                            label="Age"
+                            >
+                            <MenuItem value="">
+                                <em>None</em>
+                            </MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl>
 
-                <Button variant="contained" className={classes.button_search} color="secondary">
-                    Search
-                </Button>
+                        <Button variant="contained" className={classes.button_search} color="secondary">
+                            Search
+                        </Button>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div className="results">
+                <Results_Cars />
+            </div>
+        </>
     )
 }

@@ -1,14 +1,7 @@
-import React,{useState} from 'react';
-import More from '../Todo/More.js';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-  Link
-} from "react-router-dom";
+import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
-import images from '../img/nkar1.png'; // Tell webpack this JS file uses this image
+import images from '../img/car.jpg'; // Tell webpack this JS file uses this image
 import Location from '../img/location.svg'; 
 import Bed from '../img/bed.svg';
 import Bathroom from '../img/bath.svg';
@@ -23,8 +16,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Home from './Home.js'
-
 
 const useStyles = makeStyles((theme) => ({
     res_div:{
@@ -67,17 +58,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
-export default function Cards(){
+export default function Cards_Cars(){
     const classes = useStyles();
-    const [isAuth, setIsAuth] = useState(true);
-    if(!isAuth){
-        return <Home />
-    }
     return(
-      <Router>
-          <Card className={classes.res_div}>
+                <Card className={classes.res_div}>
                     <CardActionArea>
                         <CardMedia
                         className={classes.media}
@@ -86,34 +70,29 @@ export default function Cards(){
                         />
                         <CardContent>
                         <Typography gutterBottom className={classes.fontSize_22}>
-                            Dunmaniheen, Killka street, 14
+                            Ferrai
                             <div className={classes.price}>
                                 <span className={classes.price_text}>15000 $</span>
-                                <span className={classes.fontSize_17}>Rent</span>
+                                <span className={classes.fontSize_17}></span>
                             </div>
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
                             <div className={classes.price}>
-                                <span className={classes.fontSize_20}>Let.ie</span>
+                                <span className={classes.fontSize_20}>Done Deal</span>
                                 <span className={classes.fontSize_17}>01.12.19</span>
                             </div>
                             <div className={classes.price}>
                                 <span className={classes.fontSize_17}><img src={Location} width='20px' height='20px'></img> Waterloo, Fairhill</span>
-                                <span className={classes.fontSize_17}>House</span>
+                                <span className={classes.fontSize_17}>25000km</span>
                             </div>
                             <div className={classes.price}>
-                                <span className={classes.fontSize_17}><img src={Bed} width='20px' height='20px'></img> 4 Beds</span>
-                                <span className={classes.fontSize_17}><img src={Bathroom} width='20px' height='20px'></img> 2 Bathroom</span>
+                                <span className={classes.fontSize_17}>Diesel, 4.0 L</span>
+                                <span className={classes.fontSize_17}>Automatic</span>
                             </div>
                             <div className={classes.price}>
                                 <span className={classes.fontSize_17}><img src={Compare} width='20px' height='20px'></img> Compare</span>
                                 <span className={classes.fontSize_17}><img src={Like} width='20px' height='20px'></img></span>
-                                <span className={classes.span_three}>
-                                    <Link to='/more'>
-                                      More
-                                      <ArrowRightAltIcon className={classes.fontSize_30}></ArrowRightAltIcon>
-                                    </Link>
-                                </span>
+                                <span className={classes.span_three}>More <ArrowRightAltIcon className={classes.fontSize_30}></ArrowRightAltIcon></span>
                             </div>
                         </Typography>
                         </CardContent>
@@ -122,15 +101,10 @@ export default function Cards(){
                         <Button size="small" color="primary">
                         Share
                         </Button>
-                        <Button  size="small" color="primary">
-                          Learn More
+                        <Button size="small" color="primary">
+                        Learn More
                         </Button>
-                      
                     </CardActions>
                 </Card>
-                <Switch>
-                    <Route exact path="/more"/>
-                </Switch>
-      </Router>
     )
 }
